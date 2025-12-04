@@ -1,0 +1,23 @@
+problem - tile problem 
+  code - 
+  /******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+public class Main
+{
+    public static int countWays(int n){
+        if(n < 4)
+        return 1;
+        return countWays(n - 1) + countWays(n - 4);
+    }
+	public static void main(String[] args) {
+	    int n = 5;
+	    
+		System.out.println(countWays(n));
+	}
+}
