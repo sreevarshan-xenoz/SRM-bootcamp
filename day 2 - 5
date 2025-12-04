@@ -1,0 +1,15 @@
+problem - binary string without consucutive one's with recursion 
+  code - 
+  public class Main{
+    public static int countBinaryString(int n){
+        if(n == 0) return 0;
+        if(n == 1) return 2;
+        if(n == 2) return 3;
+        return countBinaryString(n - 1) + countBinaryString(n - 2);
+        
+    }
+    public static void main(String[] args){
+        int n = 6;
+        System.out.println("Number of binary string of length" + n + " with no consecutive one's: " + countBinaryString(n));
+    }
+}
