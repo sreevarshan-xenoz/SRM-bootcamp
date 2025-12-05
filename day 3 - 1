@@ -1,0 +1,32 @@
+problem - rope cutting 
+  code - 
+  /******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+public class Main
+{
+    public static int maxCut(int n, int a, int b, int c){
+        if(n == 0) return 0;
+        if(n < 0) return  -1; 
+        int resA = maxCut(n - a, a, b, c);    
+        int resB = maxCut(n - b, a, b, c);
+        int resC = maxCut(n - c, a, b, c);
+        int result = Math.max(resA, Math.max(resB, resC));
+        if(result == -1) return -1;
+        return result + 1;
+    }
+	public static void main(String[] args) {
+	    int N = 17;
+	    int a = 10;
+	    int b = 11;
+	    int c = 3;
+	    int ans = maxCut(N, a, b, c);
+	    System.out.print(ans);
+	
+	}
+}
